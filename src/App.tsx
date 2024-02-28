@@ -3,8 +3,8 @@ import "./styles/normalize.scss";
 
 function App() {
   return (
-    <div style={{ padding: "15px" }}>
-      <h1>Тесто</h1>
+    <div className="App">
+      <h1>Тестовое задание Valantis</h1>
       <Tablelayout />
     </div>
   );

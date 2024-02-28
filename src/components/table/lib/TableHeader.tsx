@@ -20,11 +20,9 @@ export const TableHeader = <T extends TableData>({
 }: TableHeadersProps<T>) => {
   return (
     <div
+      className={classes["table__header-container"]}
       style={{
-        display: "grid",
         gridTemplateColumns: getGridSpacing(headers),
-        position: "sticky",
-        top: 0,
       }}
     >
       {Object.entries<TableHeaders<T>>(headers).map(

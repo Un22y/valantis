@@ -26,6 +26,11 @@
       background: #555;
     }
   }
+  &__header-container {
+    display: grid;
+    position: sticky;
+    top: 0;
+  }
   &__header {
     display: flex;
     justify-content: space-between;
@@ -56,6 +61,7 @@
     color: #8f8f8f;
   }
   &__row {
+    display: grid;
     border-top: 1px solid #858585;
     &:nth-child(1) {
       border: none;
