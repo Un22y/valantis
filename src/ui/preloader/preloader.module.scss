@@ -1,0 +1,9 @@
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.preloader {
+  animation: spin 1s infinite;
+}

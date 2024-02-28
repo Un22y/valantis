@@ -1,0 +1,64 @@
+.filter {
+  &__wrapper-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  &__apply-button {
+    padding: 2px 3px;
+    border-radius: 2px;
+    border: 1px solid #c2c2c2;
+    &:hover,
+    &:active {
+      border-color: #3774e4;
+    }
+  }
+  &__apply-wrapper {
+    display: flex;
+    gap: 5px;
+  }
+  &__wrapper {
+    padding: 3px;
+    position: absolute;
+    background-color: #fff;
+    top: calc(100% + 3px);
+    right: 3px;
+    min-height: max-content;
+    display: none;
+    &_open {
+      display: block;
+      z-index: 10;
+      overflow: visible;
+      -webkit-box-shadow: 0px 0px 1px 1px #8f8f8f;
+      -moz-box-shadow: 0px 0px 1px 1px #8f8f8f;
+      box-shadow: 0px 0px 1px 1px #8f8f8f;
+      border-radius: 3px;
+    }
+  }
+  &__open-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.15s;
+    transform-origin: center center;
+    &_open,
+    &:hover {
+      color: #3774e4;
+    }
+    &_open {
+      transform: rotateX(180deg);
+    }
+  }
+  &__input {
+    outline: none;
+    border: none;
+    border: 1px solid #858585;
+    padding: 0 2px 3px;
+    transition: 0.1s;
+    &:focus {
+      outline: 0;
+      border-color: #3774e4;
+    }
+  }
+}
