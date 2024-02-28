@@ -3,7 +3,6 @@ import { API_URL } from "./const";
 import { getPassword } from "./utils";
 import { FieldParams, FilterParams, IDsRdo, PageFilterParams } from "./type";
 import { keepUniqueOnly } from "../helpers/helpers";
-import { TableData } from "../types/table-types";
 
 const $server = axios.create({
   baseURL: API_URL,
@@ -13,7 +12,7 @@ const $server = axios.create({
 });
 
 export const ServerService = {
-  filter: async <T extends TableData>(filter: FilterParams<T>) => {
+  filter: async (filter: FilterParams): Promise<IDsRdo> => {
     const {
       data: { result },
     } = await $server.post<{ result: IDsRdo }>("", {
@@ -40,10 +39,10 @@ export const ServerService = {
     });
     return keepUniqueOnly(result);
   },
-  getFields: async <T>(params: FieldParams<T>): Promise<string[]> => {
+  getFields: async (params: FieldParams): Promise<IDsRdo> => {
     const {
       data: { result },
-    } = await $server.post<{ result: string[] }>("", {
+    } = await $server.post<{ result: IDsRdo }>("", {
       action: "get_fields",
       params,
     });

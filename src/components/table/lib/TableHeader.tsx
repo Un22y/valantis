@@ -1,4 +1,4 @@
-import React, { Key } from "react";
+import { Key } from "react";
 import { TableData, TableHeaders } from "../../../types/table-types";
 import { getGridSpacing } from "../../../helpers/helpers";
 import { filtersMap } from "./filters/filters-map";
@@ -30,7 +30,6 @@ export const TableHeader = <T extends TableData>({
           return (
             <div className={classes["table__header"]} key={key as Key}>
               <h3>{name}</h3>
-
               {filterType && (
                 <FilterWrapper>
                   {filtersMap[filterType]<T>({

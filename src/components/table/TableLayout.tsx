@@ -11,13 +11,12 @@ export const Tablelayout = () => {
   const [ids, setIds] = useState<string[] | null>([]);
   const [page, setPage] = useState(1);
 
-  
   const [filters, setFilters] = useState<{
     [key: string]: string | number;
   } | null>(null);
   const [getFilteredIds, isFiltersLoading] = useFetching(async () => {
     if (filters) {
-      const ids = await ServerService.filter<ProductItem>(filters);
+      const ids = await ServerService.filter(filters);
       console.log(ids);
       setIds(ids);
     }

@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useRef, useState } from "react";
+import { PropsWithChildren, useRef, useState } from "react";
 import classes from "./filters.module.scss";
 import cn from "classnames";
 import { SlArrowDown } from "react-icons/sl";

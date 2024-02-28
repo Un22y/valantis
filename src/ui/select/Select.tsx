@@ -1,5 +1,5 @@
 import cn from "classnames";
-import React, { createRef, useState } from "react";
+import { createRef, useState } from "react";
 import { useCloseDroppedWindowListener } from "../../hooks/useCloseDroppedWindowListener ";
 import classes from "./selectPrimeList.module.scss";
 import { SlArrowDown } from "react-icons/sl";

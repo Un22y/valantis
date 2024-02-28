@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FilterProps } from "./filter-props-type";
 import { TableData } from "../../../../types/table-types";
 import { useFetching } from "../../../../hooks/useFetching";
@@ -22,13 +22,13 @@ export const LiteralsFilter = <T extends TableData>({
   }, [filterValue]);
 
   const [list, setList] = useState<string[] | null>(null);
-  const params = { field: key };
+  const params = { ["field"]: String(key) };
   useEffect(() => {
     getList();
   }, []);
 
   const [getList, isLoading] = useFetching(async () => {
-    const list = await ServerService.getFields<T>(params);
+    const list = await ServerService.getFields(params);
     setList(list);
   });
 

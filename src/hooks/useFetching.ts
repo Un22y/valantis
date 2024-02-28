@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export const useFetching = (
   callback: () => Promise<void>
-): [useFetch, boolean, string] => {
+): [() => Promise<void>, boolean, string] => {
   const [retry, setRetry] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");

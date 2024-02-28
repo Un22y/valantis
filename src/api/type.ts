@@ -5,14 +5,11 @@ export type PageFilterParams = {
   limit?: number;
 };
 
-export type FilterParams<T> = Partial<{
-  [key: string in keyof Omit<T, "id">]: T[key];
+export type FilterParams = Partial<{
+  field: string;
 }> &
   PageFilterParams;
 
-//   [key: string in keyof Omit<T, "id">]: T[key];
-
-
-export type FieldParams<T> = FilterParams<T>;
+export type FieldParams = FilterParams;
 
 export type IDsRdo = string[];
