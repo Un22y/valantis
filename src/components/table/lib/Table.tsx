@@ -27,15 +27,15 @@ export const Table = <T extends TableData>({
   const [products, setProducts] = useState<T[] | null>(null);
   const [getItems, isLoading] = useFetching(async () => {
     if (!ids) {
-      setProducts(null);
       return;
     }
-    const products = await ServerService.getItems<T>(ids);
-    setProducts(products);
+    if (ids.length) {
+      const products = await ServerService.getItems<T>(ids);
+      setProducts(products);
+    }
   });
 
   useEffect(() => {
-    setProducts(null);
     getItems();
   }, [ids]);
   return (

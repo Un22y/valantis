@@ -7,7 +7,7 @@ import { keepUniqueOnly } from "../helpers/helpers";
 const $server = axios.create({
   baseURL: API_URL,
   headers: {
-    "X-Auth": getPassword(new Date()),
+    "X-Auth": getPassword(),
   },
 });
 

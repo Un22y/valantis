@@ -18,7 +18,6 @@ export const LiteralsFilter = <T extends TableData>({
   const [listValue, setListValue] = useState<string>(filterValue);
   useEffect(() => {
     setListValue(filterValue);
-    console.log("filterValue", filterValue);
   }, [filterValue]);
 
   const [list, setList] = useState<string[] | null>(null);

@@ -17,7 +17,6 @@ export const Tablelayout = () => {
   const [getFilteredIds, isFiltersLoading] = useFetching(async () => {
     if (filters) {
       const ids = await ServerService.filter(filters);
-      console.log(ids);
       setIds(ids);
     }
   });
