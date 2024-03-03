@@ -10,7 +10,11 @@ export const getPassword = (): string => {
     String(grinvichTime.getMonth() + 1).length === 1
       ? `0${String(grinvichTime.getMonth() + 1)}`
       : String(grinvichTime.getMonth() + 1);
-  const day = grinvichTime.getDate();
+  const day =
+    String(grinvichTime.getDate()).length === 1
+      ? `0${String(grinvichTime.getDate())}`
+      : String(grinvichTime.getDate());
+  console.log(`${PASSWORD}_${year}${month}${day}`);
   const password = md5(`${PASSWORD}_${year}${month}${day}`);
 
   return password;
