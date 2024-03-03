@@ -14,7 +14,6 @@ export const getPassword = (): string => {
     String(grinvichTime.getDate()).length === 1
       ? `0${String(grinvichTime.getDate())}`
       : String(grinvichTime.getDate());
-  console.log(`${PASSWORD}_${year}${month}${day}`);
   const password = md5(`${PASSWORD}_${year}${month}${day}`);
 
   return password;
